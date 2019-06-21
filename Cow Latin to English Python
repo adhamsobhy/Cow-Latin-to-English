@@ -1,0 +1,13 @@
+def englishify_sentence(string):
+    """cow latin to english"""
+    consonants = "bcdfghjklmnpqrstvwxyz"
+    string = string.split()
+    for i in range(len(string)):
+        if string[i][-3] == "m":
+            string[i] = "(" + string[i][-3] + string[i][0:-3] + " or " + string[i][0:-3] + ")"
+        elif string[i][-2] in consonants or string[i][-2] in consonants.upper():
+            string[i] = string[i][-3] + string[i][0:-3]
+        else:
+            string[i] = string[i][-3] + string[i][0:-3]
+    string = ' '.join(string)
+    return string  
